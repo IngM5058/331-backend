@@ -51,8 +51,4 @@ return new ResponseEntity<>(output,responseHeader, HttpStatus.OK);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The given id is not found");
         }
     }
-
-
-
-
 }
