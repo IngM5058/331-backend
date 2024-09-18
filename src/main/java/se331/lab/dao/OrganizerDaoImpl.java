@@ -1,4 +1,4 @@
-package se331.lab.rest.dao;
+package se331.lab.dao;
 
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.entity.Organizer;
