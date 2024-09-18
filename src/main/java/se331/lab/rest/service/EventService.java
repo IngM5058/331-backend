@@ -1,10 +1,13 @@
-package se331.lab.rest.service;
+package se331.lab.service;
 
-import se331.lab.rest.entity.Event;
+import org.springframework.data.domain.Page;
+import se331.lab.entity.Event;
+
 import java.util.List;
 
 public interface EventService {
     Integer getEventSize();
-    List<Event> getEvents(Integer pageSize, Integer page);
-    Event getEvent(Long id);
+    Page<Event> getEvents(Integer pageSize, Integer page);
+    Event getEventById(Long id);
+    Event save(Event event);
 }
