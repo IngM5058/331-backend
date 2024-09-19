@@ -1,7 +1,8 @@
 package se331.lab.dao;
 
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Repository;
-import se331.lab.rest.entity.Organizer;
+import se331.lab.entity.Organizer;
 
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -14,16 +15,19 @@ public class OrganizerDaoImpl implements OrganizerDao {
     @PostConstruct
     public void init() {
         organizerList = new ArrayList<>();
+
         organizerList.add(Organizer.builder()
                 .id(1L)
-                .organizationName("Cat Welfare Society")
-                .address("123 Feline St.")
+                .organizationName("Animal Welfare Organization")
+                .address("123 Meow Town")
                 .build());
+
         organizerList.add(Organizer.builder()
                 .id(2L)
-                .organizationName("Dog Adoption Agency")
-                .address("456 Canine Ave.")
+                .organizationName("Community Gardeners")
+                .address("456 Flora City")
                 .build());
+
         // Add more organizers as needed
     }
 
@@ -46,5 +50,12 @@ public class OrganizerDaoImpl implements OrganizerDao {
                 .filter(organizer -> organizer.getId().equals(id))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public Organizer save(Organizer organizer) {
+        organizer.setId(organizerList.get(organizerList.size() - 1).getId() + 1);
+        organizerList.add(organizer);
+        return organizer;
     }
 }

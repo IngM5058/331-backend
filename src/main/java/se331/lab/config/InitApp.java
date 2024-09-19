@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import se331.lab.entity.Event;
-import se331.lab.rest.repository.EventRepository;
+import se331.lab.repository.EventRepository;
 
 @Repository
 @RequiredArgsConstructor
