@@ -1,7 +1,7 @@
 package se331.lab.dao;
 
 import org.springframework.data.domain.Page;
-import se331.lab.rest.entity.Event;  // Add this import
+import se331.lab.entity.Event;
 
 public interface EventDao {
     Integer getEventSize();
